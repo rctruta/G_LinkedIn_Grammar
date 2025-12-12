@@ -1,0 +1,62 @@
+/* ═══════════════════════════════════════════════════════════
+   G_LinkedIn v6.0 - RIGOROUS FINAL DIALECT (Double Quotes)
+   Fixes Lexical Analysis failure due to string escaping conflict.
+   ═══════════════════════════════════════════════════════════ */
+
+LinkedInPost     ::= Hook LineBreakAbuse BroetryBody LineBreakAbuse CTA
+
+BroetryBody      ::= Statement (LineBreakAbuse Statement)*
+
+Statement        ::= Struggle | Insight | HumbleBrag | EmojiString
+
+/* ═══════════════════════════════════════════════════════════
+   LOGIC LAYER
+   ═══════════════════════════════════════════════════════════ */
+
+Hook             ::= "Unpopular opinion:"
+                   | "Stop doing " Activity "."
+                   | "I fired my best employee today."
+                   | "They told me I was crazy."
+                   | "Can we normalize " Platitude "?"
+
+HumbleBrag       ::= "Now I run a " Scale " empire."
+                   | "I declined the offer from " BigTech "."
+                   | "Here's what I learned scaling to " Metric "." /* 's is safe */
+
+Struggle         ::= "I had $" SmallNumber " in my bank account."
+                   | "I was sleeping on " Surface "."
+                   | "It felt like the end."
+                   | "Rock bottom became my foundation."
+
+Insight          ::= Contrarian | Platitude "."
+
+Contrarian       ::= "Hot take: " Platitude "."
+                   | "Unpopular truth: " Platitude "."
+
+CTA              ::= "Agree?"
+                   | "Thoughts?"
+                   | "Link in comments 👇"
+                   | "Repost if this resonates."
+                   | "Tag someone who needs to hear this."
+
+LineBreakAbuse   ::= "\n\n" | "\n \n" | "\n.\n" | "\n—\n"
+
+EmojiString      ::= Emoji+
+
+/* ═══════════════════════════════════════════════════════════
+   VOCABULARY LAYER (Terminals)
+   ═══════════════════════════════════════════════════════════ */
+
+Platitude        ::= "consistency is key"
+                   | "hire for attitude, train for skill"
+                   | "culture eats strategy for breakfast"
+                   | "your network is your net worth"
+                   | "done is better than perfect"
+
+Activity         ::= "networking" | "job hopping" | "saying no"
+Scale            ::= "7-figure" | "8-figure" | "9-figure"
+BigTech          ::= "Google" | "Meta" | "Amazon" | "Microsoft"
+Metric           ::= "1M users" | "100M ARR" | "$50M valuation"
+SmallNumber      ::= "12" | "47" | "83"
+Surface          ::= "the floor" | "a friend's couch" | "my car"
+Emoji            ::= "🚀" | "🔥" | "💪" | "✨" | "💡" | "👇" | "⬇️" | "🎯" | "📈"
